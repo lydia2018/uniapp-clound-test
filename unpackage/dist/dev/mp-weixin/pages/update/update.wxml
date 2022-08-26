@@ -1,0 +1,1 @@
+<view><uni-easyinput wx:if="{{b}}" u-i="95e7138a-0" bind:__l="__l" bindupdateModelValue="{{a}}" u-p="{{b}}"/><uni-easyinput wx:if="{{d}}" u-i="95e7138a-1" bind:__l="__l" bindupdateModelValue="{{c}}" u-p="{{d}}"/><uni-easyinput wx:if="{{f}}" u-i="95e7138a-2" bind:__l="__l" bindupdateModelValue="{{e}}" u-p="{{f}}"/><button type="default" bindtap="{{g}}">提交</button></view>

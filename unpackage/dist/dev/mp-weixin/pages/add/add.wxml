@@ -1,0 +1,1 @@
+<view><uni-easyinput wx:if="{{b}}" u-i="ea7f26c2-0" bind:__l="__l" bindupdateModelValue="{{a}}" u-p="{{b}}"/><uni-easyinput wx:if="{{d}}" u-i="ea7f26c2-1" bind:__l="__l" bindupdateModelValue="{{c}}" u-p="{{d}}"/><uni-easyinput wx:if="{{f}}" u-i="ea7f26c2-2" bind:__l="__l" bindupdateModelValue="{{e}}" u-p="{{f}}"/><button type="default" bindtap="{{g}}">新增</button></view>
