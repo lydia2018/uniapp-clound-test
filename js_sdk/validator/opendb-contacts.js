@@ -11,7 +11,7 @@ const validator = {
         "format": "string"
       }
     ],
-    "label": "姓名"
+    "label": "姓名1"
   },
   "gender": {
     "rules": [
@@ -71,12 +71,21 @@ const validator = {
     ],
     "label": "备注"
   },
-  "create_date": {
+  "city_id": {
     "rules": [
       {
-        "format": "timestamp"
+        "format": "string"
       }
-    ]
+    ],
+    "label": "地址"
+  },
+  "nation_china": {
+    "rules": [
+      {
+        "format": "string"
+      }
+    ],
+    "label": "名族"
   }
 }
 

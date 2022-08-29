@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <unicloud-db ref="udb" v-slot:default="{data, pagination, loading, hasMore, error}" :collection="collectionList" field="username,gender,mobile,email,comment,create_date">
+    <unicloud-db ref="udb" v-slot:default="{data, pagination, loading, hasMore, error}" :collection="collectionList">
       <view v-if="error">{{error.message}}</view>
       <view v-else-if="data">
         <uni-list>
@@ -26,7 +26,7 @@
   export default {
     data() {
       return {
-        collectionList: "opendb-contacts",
+        collectionList: [ db.collection('opendb-contacts').field('username,gender,mobile,email,comment,city_id,nation_china').getTemp(),db.collection('opendb-city-china').field('code, name as text, eq(type, 2) as isleaf').getTemp() ],
         loadMore: {
           contentdown: '',
           contentrefresh: '',

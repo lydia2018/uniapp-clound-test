@@ -6621,7 +6621,7 @@ function l(e2) {
 function h(e2) {
   return e2 && typeof e2 == "string" ? JSON.parse(e2) : e2;
 }
-const d = true, f = "mp-weixin", g = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.10.124"\n    ],\n    "debugPort": 52766,\n    "initialLaunchType": "remote",\n    "servePort": 52767,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/\u81EA\u7528\u8F6F\u4EF6/HBuilderX.1.3.2.20181214/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), p = h('[{"provider":"aliyun","spaceName":"lydia-serve","spaceId":"83096ae5-1a87-4c35-be4e-c7515d2d4c71","clientSecret":"bVtouvDN+77reXCsE34Yug==","endpoint":"https://api.bspapp.com"}]');
+const d = true, f = "mp-weixin", g = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.10.124"\n    ],\n    "debugPort": 57879,\n    "initialLaunchType": "remote",\n    "servePort": 57880,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/\u81EA\u7528\u8F6F\u4EF6/HBuilderX.1.3.2.20181214/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), p = h('[{"provider":"aliyun","spaceName":"lydia-serve","spaceId":"83096ae5-1a87-4c35-be4e-c7515d2d4c71","clientSecret":"bVtouvDN+77reXCsE34Yug==","endpoint":"https://api.bspapp.com"}]');
 let y = "";
 try {
   y = "__UNI__B90B138";

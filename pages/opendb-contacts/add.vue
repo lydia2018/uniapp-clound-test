@@ -1,8 +1,8 @@
 <template>
   <view class="uni-container">
     <uni-forms ref="form" :model="formData" validate-trigger="submit" err-show-type="toast">
-      <uni-forms-item name="username" label="姓名" required>
-        <uni-easyinput placeholder="姓名" v-model="formData.username" trim="both"></uni-easyinput>
+      <uni-forms-item name="username" label="姓名1" required>
+        <uni-easyinput placeholder="姓名2" v-model="formData.username" trim="both"></uni-easyinput>
       </uni-forms-item>
       <uni-forms-item name="gender" label="性别">
         <uni-data-checkbox v-model="formData.gender" :localdata="formOptions.gender_localdata"></uni-data-checkbox>
@@ -16,8 +16,11 @@
       <uni-forms-item name="comment" label="备注">
         <textarea placeholder="备注" @input="binddata('comment', $event.detail.value)" class="uni-textarea-border" v-model="formData.comment" trim="both"></textarea>
       </uni-forms-item>
-      <uni-forms-item name="create_date" label="">
-        <uni-datetime-picker return-type="timestamp" v-model="formData.create_date"></uni-datetime-picker>
+      <uni-forms-item name="city_id" label="地址">
+        <uni-data-picker self-field="code" parent-field="parent_code" v-model="formData.city_id" collection="opendb-city-china" orderby="value asc" field="code as value, name as text, eq(type, 2) as isleaf"></uni-data-picker>
+      </uni-forms-item>
+      <uni-forms-item name="nation_china" label="名族">
+        <uni-data-picker placeholder="请选择名族" v-model="formData.nation_china" collection="opendb-nation-china" field="_id as value, name as text"></uni-data-picker>
       </uni-forms-item>
       <view class="uni-button-group">
         <button type="primary" class="uni-button" @click="submit">提交</button>
@@ -52,7 +55,8 @@
         "mobile": "",
         "email": "",
         "comment": "",
-        "create_date": null
+        "city_id": "",
+        "nation_china": ""
       }
       return {
         formData,

@@ -3,10 +3,7 @@
 		<unicloud-db ref="udb" v-slot:default="{data, loading, error, options}" collection="test">
 			<view v-if="error">{{error.message}}</view>
 			<uni-list v-else>
-				<uni-list-item showArrow v-for="(item,index) in data" @longpress.native="remove(item._id)" :key="_id" :title="item.name" :note="'今年'+item.age+'岁,来自'+item.address">
-					<template v-slot:footer>
-						<button type="default" @click.native="update(item)">修改</button>
-					</template>
+				<uni-list-item thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png" thumb-size="lg" clickable link to="pages/update/update?item=" + JSON.stringify(item) showArrow v-for="(item,index) in data" @longpress.native="remove(item._id)" :key="_id" :title="item.name" :note="'今年'+item.age+'岁,来自'+item.address">
 				</uni-list-item>
 			</uni-list>
 		</unicloud-db>

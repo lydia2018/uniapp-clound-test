@@ -1,13 +1,13 @@
 <template>
   <view class="container">
-    <unicloud-db ref="udb" v-slot:default="{data, loading, error, options}" :options="options" :collection="collectionList" field="username,gender,mobile,email,comment,create_date" :where="queryWhere" :getone="true" :manual="true">
+    <unicloud-db ref="udb" v-slot:default="{data, loading, error, options}" :options="options" :collection="collectionList" :getone="true" :manual="true">
       <view v-if="error">{{error.message}}</view>
       <view v-else-if="loading">
         <uni-load-more :contentText="loadMore" status="loading"></uni-load-more>
       </view>
       <view v-else-if="data">
         <view>
-          <text>姓名</text>
+          <text>姓名1</text>
           <text>{{data.username}}</text>
         </view>
         <view>
@@ -27,8 +27,12 @@
           <text>{{data.comment}}</text>
         </view>
         <view>
-          <text>create_date</text>
-          <uni-dateformat :threshold="[0, 0]" :date="data.create_date"></uni-dateformat>
+          <text>地址</text>
+          <text>{{data.city_id && data.city_id[0] && data.city_id[0].text}}</text>
+        </view>
+        <view>
+          <text>名族</text>
+          <text>{{data.nation_china && data.nation_china[0] && data.nation_china[0].text}}</text>
         </view>
       </view>
     </unicloud-db>
@@ -48,7 +52,7 @@
     data() {
       return {
         queryWhere: '',
-        collectionList: "opendb-contacts",
+        collectionList: [ db.collection('opendb-contacts').field('username,gender,mobile,email,comment,city_id,nation_china').getTemp(),db.collection('opendb-city-china').field('code, name as text, eq(type, 2) as isleaf').getTemp() ],
         loadMore: {
           contentdown: '',
           contentrefresh: '',
@@ -65,7 +69,7 @@
     },
     onReady() {
       if (this._id) {
-        this.queryWhere = '_id=="' + this._id + '"'
+        this.collectionList = [ db.collection('opendb-contacts').where('_id=="' + this._id + '"').field('username,gender,mobile,email,comment,city_id,nation_china').getTemp(),db.collection('opendb-city-china').field('code, name as text, eq(type, 2) as isleaf').getTemp() ]
       }
     },
     methods: {

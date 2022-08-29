@@ -13,8 +13,8 @@
 		},
 		"username": {
 			"bsonType": "string",
-			"title": "姓名",
-			"description": "姓名",
+			"title": "姓名1",
+			"description": "姓名2",
 			"order": 1,
 			"trim": "both"
 		},
@@ -34,6 +34,13 @@
 				"text": "女",
 				"value": 2
 			}]
+			// 可以设置为多选
+			// "componentForEdit":{
+			// 	"name": "uni-data-checkbox",
+			// 	"props": {
+			// 		"multiple":true
+			// 	}
+			// }
 		},
 		"mobile": {
 			"bsonType": "string",
@@ -42,6 +49,31 @@
 			"description": "电话",
 			"pattern": "^\\+?[0-9-]{3,20}$",
 			"trim": "both"
+		},
+		"city_id": {
+		  "bsonType": "string",
+		  "title": "地址",
+		  "foreignKey": "opendb-city-china.code",
+		  "enumType": "tree",
+		  "enum": {
+			"collection": "opendb-city-china",
+			"orderby": "value asc", //升序
+			"field": "code as value, name as text, eq(type, 2) as isleaf"
+		  }
+		},
+		"nation_china":{
+		  "bsonType": "string",
+		  "title": "名族",
+		  "enum": {
+			"collection": "opendb-nation-china",
+			"field": "_id as value, name as text"
+		  },
+		  "componentForEdit": {
+			"name":"uni-data-picker",
+			 "props":{
+				 "placeholder": "请选择名族"
+			 }
+		  }
 		},
 		"email": {
 			"bsonType": "string",

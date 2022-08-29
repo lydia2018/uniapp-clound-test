@@ -318,9 +318,9 @@
 		padding-right: 5px;
 		overflow: hidden;
 		height: 35px;
-		/* #ifndef APP-NVUE */
-		box-sizing: border-box;
+		/* #ifdef APP-NVUE */
 		/* #endif */
+		box-sizing: border-box;
 	}
 
 	.input-value-border {

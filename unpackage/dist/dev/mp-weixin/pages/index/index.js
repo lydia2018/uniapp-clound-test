@@ -60,10 +60,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       } : {
         c: common_vendor.f(data, (item, index, i1) => {
           return {
-            a: common_vendor.o(($event) => $options.update(item)),
+            a: common_vendor.o(($event) => $options.update(item), _ctx._id),
             b: common_vendor.o(($event) => $options.remove(item._id), _ctx._id),
             c: "3f06dcc1-2-" + i0 + "-" + i1 + "," + ("3f06dcc1-1-" + i0),
             d: common_vendor.p({
+              thumb: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png",
+              ["thumb-size"]: "lg",
+              clickable: true,
               showArrow: true,
               title: item.name,
               note: "\u4ECA\u5E74" + item.age + "\u5C81,\u6765\u81EA" + item.address
